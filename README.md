@@ -1,5 +1,8 @@
-Cruddy Beer is a CRUD exercise using Flask.
+# Cruddy Beer is a CRUD exercise using Flask.
 
-From this, a user will be able to add/remove a brewery, then add/remove a beer to that brewery.
+From this, a user will be able to do the following:
 
-The home page will then display the data on the index page.
+- add/remove a brewery
+- add/remove a beer to a chosen brewery
+
+The home page will then refresh and display the new data.
