@@ -1,7 +1,3 @@
-from flask import Flask, render_template
-
-app = Flask(__name__)
-
 def db_connect():
     db = "blah"
     return db
@@ -21,10 +17,3 @@ def beer_add():
 #Check if beer exists in selected brewery, if it does, remove it
 def beer_remove():
     return "Remove Beer"
-
-@app.route("/")
-def index():
-    return render_template('index.html')
-
-if __name__ == "__main__":
-    app.run()
