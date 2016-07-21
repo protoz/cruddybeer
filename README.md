@@ -14,22 +14,24 @@ pip install mongoengine
 ## What you can currently do:
 
 ### Add a Brewery and associate a beer using the manage.py
-> python manage.py shell
->
-> from cruddybeer.models import Beer, Brewery
-> brewery = Brewery(
-> name = "Brewery Name",
-> slug = "brewery-name",
-> description = "Brewery Description"
-> )
-> brewery.save()
->
-> beer = Beer(
-> name="Beer Name",
-> description="Beer Description"
-> )
-> brewery.beers.append(beer)
-> brewery.save()*
+```python
+python manage.py shell
+
+from cruddybeer.models import Beer, Brewery
+brewery = Brewery(
+name = "Brewery Name",
+slug = "brewery-name",
+description = "Brewery Description"
+)
+brewery.save()
+
+beer = Beer(
+name="Beer Name",
+description="Beer Description"
+)
+brewery.beers.append(beer)
+brewery.save()
+```
 
 You will now have a collection in the test database of MongoDB called brewery.
 
