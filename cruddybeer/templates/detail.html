@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block page_header %}
+  <div class="page-header">
+    <h1>{{ brewery.name }}</h1>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <p>{{ brewery.description }}<p>
+  <hr>
+  <h2>Beers on Tap</h2>
+  {% if brewery.beers %}
+    {% for beer in brewery.beers %}
+       <p>{{ beer.name }}</p>
+       <p><strong>{{ beer.description }}</strong> <small>added {{ beer.created_at.strftime('%H:%M %Y-%m-%d') }}</small></p>
+      {{ beer.text }}
+    {% endfor %}
+  {% endif %}
+{% endblock %}
