@@ -37,7 +37,10 @@ You will now have a collection in the test database of MongoDB called brewery.
 
 
 ## Starting Cruddybeer
-Start the flask application with python run.py
+Start the flask application with
+```python
+python run.py
+```
 
 ## Future To-Do
 - Add proper testing
