@@ -1,0 +1,24 @@
+proxy_cruddybeer:
+  image: nginx
+  container_name: cruddybeer_proxy
+  hostname: cruddybeer_proxy
+  ports:
+    - "8080:80"
+  environment:
+    - NGINX_PORT=80
+
+app_cruddybeer:
+  image: cruddybeer-app
+  container_name: cruddybeer_app
+  hostname: cruddybeer_app
+  environment:
+    - GIT_BRANCH=development
+  volumes:
+    - '/tmp/uwsgi.sock'
+
+db_mongodb:
+  image: mongo
+  container_name: cruddybeer_mongodb
+  hostname: cruddybeer_mongodb
+  volumes:
+    - '/var/lib/mongodb/'

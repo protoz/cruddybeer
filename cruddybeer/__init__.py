@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_mongoengine import MongoEngine
+#flask_mongoengine 0.7.5 still complains about flask.ext.mongoengine being deprecated.  Fixed in unreleased 0.8.0
 
 app = Flask(__name__)
 db = MongoEngine(app)
