@@ -5,7 +5,7 @@ from flask_mongoengine import MongoEngine
 app = Flask(__name__)
 db = MongoEngine(app)
 app.config.from_object('cruddybeer.config')
-#app.config.from_envvar('YOURAPPLICATION_SETTINGS')
+#cruddybeer.config.from_envvar('YOURAPPLICATION_SETTINGS')
 
 import cruddybeer.config
 import cruddybeer.models
