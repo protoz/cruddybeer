@@ -2,17 +2,18 @@ FROM ubuntu
 
 MAINTAINER Dave Hoffman
 
-ENV NEW_NGNIX_CONF_FILE=config/ngnix.conf \
-    OLD_NGNIX_CONF_FILE=/etc/ngnix/ngnix.conf \
-    NGNIX_HTTP_PORT=80
+ENV NEW_NGINX_CONF_FILE=./config/nginx.conf \
+    OLD_NGINX_CONF_FILE=/etc/nginx/nginx.conf \
+    NGINX_HTTP_PORT=80:80
 
-RUN apt-get update && apt-get install -y nginx
+RUN apt-get update \
+    && apt-get install -y \
+        nginx
 
-#Guides say to remove this file but it doesn't seem to exist in Xenial.  Need to troubleshoot further.
-#RUN rm -v ${OLD_NGNIX_CONF_FILE}
+RUN rm -v ${OLD_NGINX_CONF_FILE}
 
-ADD ${NEW_NGNIX_CONF_FILE} ${OLD_NGNIX_CONF_FILE}
+ADD ${NEW_NGINX_CONF_FILE} ${OLD_NGINX_CONF_FILE}
 
-EXPOSE ${NGNIX_HTTP_PORT}
+EXPOSE ${NGINX_HTTP_PORT}
 
-CMD service ngnix start
+CMD service nginx start
