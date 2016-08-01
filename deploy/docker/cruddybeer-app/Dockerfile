@@ -22,6 +22,6 @@ RUN wget https://github.com/protoz/cruddybeer/archive/${GIT_BRANCH}.zip \
     && mv cruddybeer-${GIT_BRANCH} env
 
 #Run Cruddybeer with uWSGI
-EXPOSE 9001 5000
+EXPOSE 8001
 CMD cd env \
     && uwsgi --ini uwsgi.ini
