@@ -16,4 +16,4 @@ ADD ${NEW_NGINX_CONF_FILE} ${OLD_NGINX_CONF_FILE}
 
 EXPOSE ${NGINX_HTTP_PORT}
 
-CMD service nginx start
+CMD nginx -g 'daemon off;'
