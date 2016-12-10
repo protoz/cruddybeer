@@ -5,11 +5,6 @@ From this, a user will be able to do the following:
 - add/remove a brewery
 - add/remove a beer to a chosen brewery
 
-## Requirements
-pip install flask
-
-pip install mongoengine
-
 
 ## What you can currently do:
 

@@ -1,7 +1,7 @@
 import unittest
 import cruddybeer
 
-#Stubbed out tests
+# Stubbed out tests
 
 if __name__ == '__main__':
     unittest.main()

@@ -7,13 +7,17 @@ breweries = Blueprint('breweries', __name__, template_folder='templates')
 
 
 class ListView(MethodView):
+    def __init__(self):
+        pass
 
     def get(self):
-        breweries = Brewery.objects.all()
-        return render_template('list.html', breweries=breweries)
+        all_breweries = Brewery.objects.all()
+        return render_template('list.html', breweries=all_breweries)
 
 
 class DetailView(MethodView):
+    def __init__(self):
+        pass
 
     def get(self, slug):
         brewery = Brewery.objects.get_or_404(slug=slug)
