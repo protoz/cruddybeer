@@ -1,20 +1,22 @@
 from flask import Flask
 from flask_mongoengine import MongoEngine
-import cruddybeer.config
-import cruddybeer.models
+
 
 app = Flask(__name__)
-db = MongoEngine(app)
 app.config.from_object('cruddybeer.config')
-# cruddybeer.config.from_envvar('YOURAPPLICATION_SETTINGS')
+db = MongoEngine(app)
 
 
-def register_blueprints(app):
+def register_blueprints():
     # Prevents circular imports
+
+    import cruddybeer.config
+    import cruddybeer.models
     from cruddybeer.views import breweries
     app.register_blueprint(breweries)
 
-register_blueprints(app)
+
+register_blueprints()
 
 if __name__ == "__main__":
     app.run()

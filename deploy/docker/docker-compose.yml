@@ -1,7 +1,9 @@
-version: "2"
+version: "3"
+
 services:
   cruddybeer_nginx:
-    image: cruddybeer-proxy
+    build: ./ngnix-proxy
+    image: nginx-proxy
     container_name: cruddybeer_proxy
     hostname: cruddybeer_proxy
     depends_on:
@@ -13,6 +15,7 @@ services:
       UWSGI_SERVER: http://cruddybeer_app:8001
 
   cruddybeer_app:
+    build: ./cruddybeer-app/
     image: cruddybeer-app
     container_name: cruddybeer_app
     hostname: cruddybeer_app

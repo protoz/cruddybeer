@@ -4,4 +4,6 @@ Lib/
 Include/
 tcl/
 .idea/
+venv/
 pip-selfcheck.json
+*.log

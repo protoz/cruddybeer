@@ -1,11 +1,11 @@
 import os
 import sys
 from flask_script import Manager, Server
-from cruddybeer import app
+from cruddybeer import create_app
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-manager = Manager(app)
+manager = Manager(create_app)
 
 # Turn on debugger by default and reloader
 manager.add_command("runserver", Server(
