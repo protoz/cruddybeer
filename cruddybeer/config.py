@@ -7,9 +7,7 @@ class Config(object):
     DEBUG = False
     TESTING = False
     CSRF_ENABLED = True
-    MONGODB_SETTINGS = {
-        'db': "cruddybeer_db"
-    }
+    MONGODB_SETTINGS = {"db": "cruddybeer_db"}
     SECRET_KEY = "SomethingSecret"
 
 

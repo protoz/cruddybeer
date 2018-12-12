@@ -3,5 +3,5 @@ import cruddybeer
 
 # Stubbed out tests
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

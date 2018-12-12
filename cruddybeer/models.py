@@ -13,22 +13,23 @@ class Brewery(db.Document):
     """
     Check if the brewery currently exists, if it does not, add brewery
     """
+
     created_at = db.DateTimeField(default=datetime.datetime.now, required=True)
     name = db.StringField(max_length=255, required=True)
     slug = db.StringField(max_length=255, required=True)
     description = db.StringField(required=True)
-    beers = db.ListField(db.EmbeddedDocumentField('Beer'))
+    beers = db.ListField(db.EmbeddedDocumentField("Beer"))
 
     def get_absolute_url(self):
-        return url_for('post', kwargs={"slug": self.slug})
+        return url_for("post", kwargs={"slug": self.slug})
 
     def __unicode__(self):
         return self.name
 
     meta = {
-        'allow_inheritance': True,
-        'indexes': ['-created_at', 'slug'],
-        'ordering': ['-created_at']
+        "allow_inheritance": True,
+        "indexes": ["-created_at", "slug"],
+        "ordering": ["-created_at"],
     }
 
 
