@@ -10,13 +10,8 @@ db = MongoEngine(app)
 def register_blueprints():
     # Prevents circular imports
 
-    import cruddybeer.config
-    import cruddybeer.models
-    from cruddybeer.views import breweries
-    app.register_blueprint(breweries)
+    import cruddybeer.views
+    app.register_blueprint(views.breweries)
 
 
 register_blueprints()
-
-if __name__ == "__main__":
-    app.run()

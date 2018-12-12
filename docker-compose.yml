@@ -1,17 +1,23 @@
-version: "2"
+version: "3"
+
 services:
   cruddybeer_app:
     build: .
+    image: cruddybeer-app
     container_name: cruddybeer_app
     hostname: cruddybeer_app
     depends_on:
       - "cruddybeer_db"
     ports:
       - "80"
+    environment:
+      GIT_BRANCH: dockerize
 
   cruddybeer_db:
     image: mongo
     container_name: cruddybeer_db
     hostname: cruddybeer_db
+    ports:
+      - "27017"
     volumes:
       - '/var/lib/mongodb/'

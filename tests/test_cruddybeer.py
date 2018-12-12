@@ -1,5 +1,4 @@
 import unittest
-import cruddybeer
 
 # Stubbed out tests
 
