@@ -8,3 +8,5 @@ venv/
 venv-win/
 pip-selfcheck.json
 *.log
+.vscode
+.mypy_cache
